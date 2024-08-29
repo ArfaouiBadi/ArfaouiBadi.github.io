@@ -1,6 +1,10 @@
+import RenderModel from "./RenderModel"
+
 const About = () => {
   return (
-    <div>About</div>
+    <div>
+      <RenderModel />
+    </div>
   )
 }
 
