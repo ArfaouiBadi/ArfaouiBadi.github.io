@@ -1,28 +1,37 @@
 import React, { useState } from 'react';
+import emailjs from 'emailjs-com';
 
 const Contact = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
 
-  const handleNameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setName(event.target.value);
-  };
+  const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) => setName(e.target.value);
+  const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => setEmail(e.target.value);
+  const handleMessageChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => setMessage(e.target.value);
 
-  const handleEmailChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setEmail(event.target.value);
-  };
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
 
-  const handleMessageChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
-    setMessage(event.target.value);
-  };
+    const templateParams = {
+      name,
+      email,
+      message,
+    };
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    // Perform any necessary actions with the form data, such as sending it to a server
-    console.log('Name:', name);
-    console.log('Email:', email);
-    console.log('Message:', message);
+    emailjs.send('service_db8ozjk', 'template_v3tddma', templateParams, 'YUoSQ0XFHglsNCzcV')
+      .then((response) => {
+        console.log('SUCCESS!', response.status, response.text);
+        alert('Message sent successfully!');
+      }, (err) => {
+        console.log('FAILED...', err);
+        alert('Failed to send message. Please try again later.');
+      });
+
+    // Clear the form
+    setName('');
+    setEmail('');
+    setMessage('');
   };
 
   return (
