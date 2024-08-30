@@ -1,10 +1,11 @@
-
+import { Link } from "react-router-dom"
+import heroImage from "../assets/hero.jpg";
 const Home = () => {
   return (
     <div className="home">
       <div className="info">
-        <img src="https://images.unsplash.com/photo-1557683316-973673baf926" alt="home" className='imeg' />
-        <div className="status"> <div className='circle'></div><p>Available</p></div>
+        <img src={heroImage} alt="home" className="heroImage" />
+        <div className="status"> <div className='circle'></div><Link to="/contact" style={{ textDecoration: 'none', color: 'inherit' }}>Available</Link></div>
       </div>
 
       <h1 className='introduction'>Hello , I'm Arfaoui Badi a fullstack developer</h1>
