@@ -91,13 +91,20 @@ body {
 
 .navbar {
   flex: 1;
-
   height: 100vh;
+  
 }
 
 .nameHeader {
   padding: 45px 30px;
   border-bottom: 2px solid #80808049;
+  display: flex;
+  flex-direction: row;
+  
+  justify-content: space-between;
+}
+.collapstedNavBar{
+  display: none;
 
 }
 
@@ -146,28 +153,14 @@ body {
 .home{
   display: flex;
   flex-direction: column;
-  padding: 40px 80px;
+  padding: 40px;
   flex: 5;
 }
-@media screen and (max-width: 768px) {
-  .w-container {
-    flex-direction: column;
-  }
-  .navbar {
-    height: auto;
-  }
-  .home {
-    padding: 40px 20px;
-  }
-  .status{
-    display: none;
-  }
-  
-}
+
 
 .routes-container {
   flex: 5;
-  padding: 40px 80px;
+  padding: 40px;
   border-left: 2px solid #80808049;
   display: flex;
   flex-direction: column;
@@ -377,5 +370,55 @@ g{
 }
 .socialIcon:hover{
   background-color: #171717;
+  
+}
+.nameLogo{
+  padding: 20px 0px;
+}
+.box {
+  background-color: white;
+  border-radius: 1px;
+  width: 5px;
+  height: 5px;
+  
+}
+
+
+
+@media screen and (max-width: 768px) {
+  .w-container {
+    flex-direction: column;
+  }
+  .navbar {
+    
+  }
+  .home {
+    padding: 40px 20px;
+  }
+  .status{
+    display: none;
+  }
+  .routes-container {
+    border-left: none;
+  }
+  .navbar{
+    padding: 0;
+  }
+  .navLinks{
+    display: none;
+  }
+  .nameHeader{
+    padding: 0px 60px;
+  }
+  .collapstedNavBar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+    border-left: 2px solid #80808049;
+    padding-right: 0;
+    padding-left: 55px;
+  }
   
 }
