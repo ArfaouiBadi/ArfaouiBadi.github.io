@@ -143,11 +143,35 @@ body {
   color: #fca311;
 
 }
+.home{
+  display: flex;
+  flex-direction: column;
+  padding: 40px 80px;
+  flex: 5;
+}
+@media screen and (max-width: 768px) {
+  .w-container {
+    flex-direction: column;
+  }
+  .navbar {
+    height: auto;
+  }
+  .home {
+    padding: 40px 20px;
+  }
+  .status{
+    display: none;
+  }
+  
+}
 
 .routes-container {
   flex: 5;
   padding: 40px 80px;
   border-left: 2px solid #80808049;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 
 }
 
@@ -202,7 +226,7 @@ body {
 
 .description {
   font-weight: 300;
-  font-size: 20px;
+  font-size: 17px;
   margin-top: 30px;
   color: #808080;
   transition: all 0.3s ease-in-out;
@@ -322,4 +346,36 @@ textarea {
   border: none;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
+}
+.socials{
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  margin-top: 20px;
+}
+.socialIcon{
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+  border-radius: 5px;
+  padding: 10px;
+  border: 1px solid #8080808e;
+  transition: all 0.4s ease-in-out;
+}
+
+.socialIcon svg{
+  width: 20px;
+  height: 20px;
+  transition: all 0.3s ease-in-out;
+}
+g{
+  fill: #808080;
+  transition: all 0.3s ease-in-out;
+}
+.socialIcon svg:hover g{
+  fill: white;
+}
+.socialIcon:hover{
+  background-color: #171717;
+  
 }
