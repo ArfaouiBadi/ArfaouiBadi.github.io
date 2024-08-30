@@ -347,12 +347,19 @@ textarea {
   cursor: pointer;
   transition: all 0.3s ease-in-out;
 }
-
 .socials {
   display: flex;
   flex-direction: row;
   gap: 20px;
   margin-top: 20px;
+}
+.socialIcon a {
+  text-decoration: none;
+  color: #808080;
+  transition: all 0.3s ease-in-out;
+}
+.socialIcon a:hover {
+  color: white;
 }
 
 .socialIcon {
@@ -382,7 +389,7 @@ g {
 
 .socialIcon:hover {
   background-color: #171717;
-
+  
 }
 
 .nameLogo {
@@ -427,7 +434,21 @@ g {
   .routes-container {
     border-left: none;
   }
+  .cvBtn{
+    font-size: 15px;
 
+    padding: 0 10px;
+    display: flex;
+    font-weight: 500;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease-in-out;
+  }
+  .cvBtn:hover {
+    background-color: #171717;
+  }
+  
+  
   .navbar {
     padding: 0;
   }

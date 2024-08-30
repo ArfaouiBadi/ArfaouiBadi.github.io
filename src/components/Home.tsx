@@ -30,7 +30,9 @@ const Home = () => {
             </svg>
             </a>
           </div>
-
+        <div className="socialIcon">
+          <a href="https://drive.google.com/file/d/1IECs7PlHxfgNYv6MYLbxI_ATnqJLfSel/view?usp=drive_link" target="_blank" rel="noreferrer">Get CV</a>
+        </div>
       </div>
     </div>
   )
