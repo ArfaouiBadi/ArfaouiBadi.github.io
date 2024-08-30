@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { NavLinkItemProps } from "../interface";
 
 const NavLinkItem = (props: NavLinkItemProps) => {
-  console.log(props);
+  
   return (
     <Link className="navLink" to={props.path} style={{ textDecoration: 'none', color: 'inherit' }}>
       {props.icon}
