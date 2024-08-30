@@ -375,14 +375,27 @@ g{
 .nameLogo{
   padding: 20px 0px;
 }
-.box {
-  background-color: white;
+.Box {
+  background-color: #808080;
   border-radius: 1px;
-  width: 5px;
-  height: 5px;
+  width: 6px;
+  height: 6px;
+  
   
 }
-
+.tableBox{
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+.row{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.navbarCollapsed{
+  display: none;
+}
 
 
 @media screen and (max-width: 768px) {
@@ -396,7 +409,7 @@ g{
     padding: 40px 20px;
   }
   .status{
-    display: none;
+    
   }
   .routes-container {
     border-left: none;
@@ -420,5 +433,30 @@ g{
     padding-right: 0;
     padding-left: 55px;
   }
+  .navbarCollapsed{
+    display: flex;
+    flex-direction: column;
+  }
+  
+}
+@media screen and (max-width: 425px) {
+  .jobTitle{
+    display: none;
+  }
+  .name{
+    font-size: 15px;
+    padding: 0;
+  }
+  .status{
+    padding: 10px 20px;
+    scale: 0.7
+  }
+  .introduction{
+    font-size: 30px;
+  }
+  .description{
+    font-size: 15px;
+  }
+  
   
 }

@@ -16,10 +16,11 @@ const Navbar = () => {
 
   useEffect(() => {
     if (isCollapsed) {
-      gsap.to(iconRef.current, { rotation: 90, duration: 0.5 , ease: "power2.inOut"});
+      gsap.to(iconRef.current, { rotation: 90, duration: 0.5, ease: "power2.inOut" });
     } else {
       gsap.to(iconRef.current, { rotation: 45, duration: 0.5, ease: "power2.inOut" });
     }
+
   }, [isCollapsed]);
 
   return (
@@ -49,9 +50,24 @@ const Navbar = () => {
             />
           );
         })}
-        
+
       </div>
+      {isCollapsed && <div className="overlay" onClick={toggleNavbar}>
+        <div className="navbarCollapsed">
+          {navLinkItems.map((item: NavLinkItemProps, index: number) => {
+            return (
+              <NavLinkItem
+                key={index}
+                icon={item.icon}
+                title={item.title}
+                path={item.path}
+              />
+            );
+          })}
+        </div>
+      </div>}
     </nav>
+
   );
 };
 
