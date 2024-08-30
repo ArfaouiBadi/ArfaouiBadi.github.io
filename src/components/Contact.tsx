@@ -39,7 +39,7 @@ const Contact = () => {
       <div>
         <h1 className='contact-title'>Let's chat</h1>
         <p className='contact-description'>If you'd like to talk about a potential project or just say hi, send me a message or email me at</p>
-        <button onClick={() => window.location.href = 'mailto:ArfaouiBadi19@gmail.com'}>ArfaouiBadi19@gmail.com</button>!
+        <button onClick={() => window.location.href = 'mailto:ArfaouiBadi19@gmail.com'} className='emailBtn'>ArfaouiBadi19@gmail.com !</button>
       </div>
       <form className='contact-form' onSubmit={handleSubmit}>
         <div className="nameAndEmail">
