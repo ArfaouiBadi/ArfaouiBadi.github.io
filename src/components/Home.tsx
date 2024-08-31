@@ -34,7 +34,9 @@ const Home = () => {
           <a href="https://drive.google.com/file/d/1IECs7PlHxfgNYv6MYLbxI_ATnqJLfSel/view?usp=drive_link" target="_blank" rel="noreferrer">Get CV</a>
         </div>
       </div>
+      <h1 className='introduction'>Featured Work</h1>
     </div>
+    
   )
 }
 

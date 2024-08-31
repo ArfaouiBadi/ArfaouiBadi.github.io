@@ -214,7 +214,7 @@ body {
 
 .introduction {
   font-weight: 400;
-  font-size: 40px;
+  font-size: 35px;
   transition: all 0.3s ease-in-out;
   margin-top: 30px;
 }
@@ -503,7 +503,7 @@ g {
   }
 
   .introduction {
-    font-size: 30px;
+    font-size: 20px;
   }
 
   .description {
