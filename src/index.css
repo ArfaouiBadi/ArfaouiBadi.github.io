@@ -86,13 +86,11 @@ body {
   margin-right: auto;
   display: flex;
   flex-direction: row;
-
 }
 
 .navbar {
   flex: 1;
   height: 100vh;
-
 }
 
 .nameHeader {
@@ -106,7 +104,6 @@ body {
 
 .collapstedNavBar {
   display: none;
-
 }
 
 .heroImage {
@@ -124,7 +121,6 @@ body {
   color: white;
   transition: all 0.5s ease-in-out;
   cursor: pointer;
-
 }
 
 .name:hover {
@@ -136,20 +132,17 @@ body {
   font-weight: 200;
   color: #808080;
   cursor: pointer;
-
 }
 
 .logo {
   font-weight: 900;
   font-size: 50px;
-  display: 'inline-block';
+  display: "inline-block";
   cursor: pointer;
-
 }
 
 .logo:hover {
   color: #fca311;
-
 }
 
 .home {
@@ -159,7 +152,6 @@ body {
   flex: 5;
 }
 
-
 .routes-container {
   flex: 5;
   padding: 40px;
@@ -167,7 +159,6 @@ body {
   display: flex;
   flex-direction: column;
   gap: 20px;
-
 }
 
 .navLink {
@@ -181,10 +172,7 @@ body {
 }
 
 .navLink:hover {
-
   background-color: #171717;
-
-
 }
 
 .navLink svg {
@@ -209,7 +197,6 @@ body {
 
 .navLink:hover svg {
   fill: white;
-
 }
 
 .introduction {
@@ -253,7 +240,7 @@ body {
 }
 
 .status:hover {
-  background-color: #052505
+  background-color: #052505;
 }
 
 .circle {
@@ -268,8 +255,6 @@ body {
   justify-content: center;
   display: flex;
   flex-direction: column;
-
-
 }
 
 .contact-title {
@@ -285,12 +270,9 @@ body {
 }
 
 .contact-form {
-
   display: flex;
   flex-direction: column;
   justify-content: center;
-
-
 }
 
 .contactEmail {
@@ -306,7 +288,6 @@ body {
   flex-wrap: wrap;
   gap: 10px;
   margin-top: 20px;
-
 }
 
 .nameAndEmail input {
@@ -321,7 +302,6 @@ input {
   background-color: #171717;
   color: white;
   border: none;
-
 }
 
 textarea {
@@ -389,7 +369,6 @@ g {
 
 .socialIcon:hover {
   background-color: #171717;
-  
 }
 
 .nameLogo {
@@ -401,8 +380,6 @@ g {
   border-radius: 1px;
   width: 6px;
   height: 6px;
-
-
 }
 
 .tableBox {
@@ -420,6 +397,65 @@ g {
 .navbarCollapsed {
   display: none;
 }
+.featuredWork {
+  margin-top: 50px;
+}
+.cardWork {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  border-radius: 10px;
+  
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  overflow: hidden;
+}
+
+.imageWork {
+  height: 300px;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 10px;
+  justify-content: center;
+  scale: 0.8;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+
+}
+
+.imageWork:hover {
+  scale: 1;
+  
+}
+
+.animate {
+  transition: scale 1s ease-in-out;
+}
+
+.animate:hover {
+  opacity: 0.8;
+}
+.descWork{
+  margin-top: 20px;
+  text-transform: uppercase;
+  font-size: 15px;
+  font-weight: 500;
+  color: #808080;
+  transition: all 0.3s ease-in-out;
+}
+.titleWork{
+  
+  font-size: 20px;
+  font-weight: 500;
+  color: white;
+  transition: all 0.3s ease-in-out;
+}
+
+.titleWork:hover {
+  color: #fca311;
+}
+
 
 @media screen and (max-width: 768px) {
   .w-container {
@@ -430,11 +466,10 @@ g {
     padding: 40px 20px;
   }
 
-
   .routes-container {
     border-left: none;
   }
-  .cvBtn{
+  .cvBtn {
     font-size: 15px;
 
     padding: 0 10px;
@@ -447,8 +482,7 @@ g {
   .cvBtn:hover {
     background-color: #171717;
   }
-  
-  
+
   .navbar {
     padding: 0;
   }
@@ -480,7 +514,6 @@ g {
   .contact-container {
     padding: 0 10%;
   }
-
 }
 
 .emailBtn {
@@ -499,7 +532,7 @@ g {
 
   .status {
     padding: 10px 20px;
-    scale: 0.7
+    scale: 0.7;
   }
 
   .introduction {
@@ -513,13 +546,7 @@ g {
   .contact-container {
     padding: 0;
   }
-
-
-
-
 }
-
-
 
 @media screen and (max-width: 500px) {
   .contact-title {
@@ -533,5 +560,4 @@ g {
   .emailBtn {
     font-size: 15px;
   }
-
 }
