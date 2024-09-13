@@ -169,7 +169,6 @@ body {
 .routes-container {
   flex: 5;
   padding: 40px;
-  
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -560,7 +559,8 @@ g {
 
   .routes-container {
     border-left: none;
-    margin-left: 173px;
+    margin-left: 0;
+    
   }
 
   .cvBtn {
