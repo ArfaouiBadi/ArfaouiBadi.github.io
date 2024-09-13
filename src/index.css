@@ -162,17 +162,18 @@ body {
   flex-direction: column;
   padding: 40px;
   flex: 5;
-  margin-left: 173px;
+  
 }
 
 /* Routes container styles */
 .routes-container {
   flex: 5;
   padding: 40px;
-  border-left: 2px solid #80808049;
+  
   display: flex;
   flex-direction: column;
   gap: 20px;
+  margin-left: 213px;
 }
 
 /* Navigation link styles */
@@ -559,6 +560,7 @@ g {
 
   .routes-container {
     border-left: none;
+    margin-left: 173px;
   }
 
   .cvBtn {
