@@ -95,8 +95,10 @@ body {
 
 /* Navbar styles */
 .navbar {
+  position: fixed;
   flex: 1;
-  border-left: 2px solid #80808049;
+  border-right: 2px solid #80808049;
+  height: 100%;
 }
 
 .nameHeader {
@@ -160,6 +162,7 @@ body {
   flex-direction: column;
   padding: 40px;
   flex: 5;
+  margin-left: 173px;
 }
 
 /* Routes container styles */
@@ -465,6 +468,8 @@ g {
 .bgWork {
   position: relative;
   padding: 30px 20px;
+  border-radius: 10px;
+  background-size: cover;
 }
 
 .cardWork:hover .titleWork {
@@ -518,6 +523,27 @@ g {
 .titleWork:hover {
   color: #fca311;
 }
+.viewAllWorkBtn{
+  margin-top: 50px;
+  width: 100%;
+  padding: 15px 25px;
+  border-radius: 5px;
+  border: 1px solid #8080808e;
+  color: white;
+  font-weight: 500;
+  text-align: center;
+  cursor: pointer;  
+  transition: all 0.3s ease-in-out;
+
+}
+
+
+
+
+
+
+
+
 
 /* Responsive styles for screens smaller than 768px */
 @media screen and (max-width: 768px) {
@@ -526,6 +552,7 @@ g {
   }
 
   .home {
+    margin-left: 0;
     margin-top: 50px;
     padding: 40px 20px;
   }
@@ -556,6 +583,7 @@ g {
     background-color: #121212;
     z-index: 99;
     width: 100vw;
+    height: fit-content;
   }
 
   .navLinks {
