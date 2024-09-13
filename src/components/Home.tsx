@@ -2,9 +2,30 @@ import { Link } from "react-router-dom";
 import heroImage from "../assets/hero.jpg";
 import CardWork from "./CardWork";
 import healverseProject1  from "../assets/projects/healverse.png";
-
 import healverseBg from "../assets/projects/healverseBg.png";
+import { projects } from "@/constants";
+import { useEffect, useState } from "react";
+type Project = {
+  title: string;
+  description: string;
+  images: string[] | undefined;
+  technologies: string[];
+  comingSoon: boolean;
+  github: string;
+};
+
 const Home = () => {
+  const [hoveredCard, setHoveredCard] = useState<number | null>(null);
+  useEffect(() => {
+    console.log(projects);
+  },projects)
+  const handleMouseEnter = (index: number) => {
+    setHoveredCard(index);
+  };
+
+  const handleMouseLeave = () => {
+    setHoveredCard(null);
+  };
   return (
     <div className="home">
       <div className="info">
@@ -122,8 +143,22 @@ const Home = () => {
       <h1 className="introduction">Featured Work</h1>
       <div className="featuredWork">
         <div className="grid grid-cols-2 grid-rows-2 gap-4">
-          <CardWork imageWork={[healverseBg,healverseProject1]} titleWork={"Animeverse"} descWork={"Ecommerce"} />
-          
+        {
+          projects.map((project:Project , index : number)=>{
+            return <CardWork
+            key={index}
+            images={[project.images![0], project.images![1]]}
+            title={project.title}
+            description={project.description}
+            isHovered={hoveredCard === 0}
+            onMouseEnter={() => handleMouseEnter(0)}
+            onMouseLeave={handleMouseLeave}
+            comingSoon={project.comingSoon}/>
+          })
+        }
+
+        
+
           
         </div>
       </div>

@@ -1,41 +1,32 @@
-import { useEffect, useState } from "react";
-import gsap from "gsap";
-
 interface CardWorkProps {
-    imageWork : Array<string>,
-    titleWork : string,
-    descWork:string
+  images: string[];
+  title: string;
+  description: string;
+  isHovered: boolean;
+  comingSoon: boolean;
+  onMouseEnter: () => void;
+  onMouseLeave: () => void;
 }
 
-const CardWork = (props : CardWorkProps) => {
-    useEffect(() => {
-        gsap.to(".imageWork", { scale: 0.85, duration: 0.1, ease: "out" });
-    }, []);
-
-    const handleMouseEnter = () => {
-        gsap.to(".imageWork", { scale: 0.9, duration: 0.2 , ease: "back.inOut" });
-    };
-
-    const handleMouseLeave = () => {
-        gsap.to(".imageWork", { scale: 0.85, duration: 0.3, ease: "out" });
-    };
-
+const CardWork: React.FC<CardWorkProps> = ({ images, title, description, isHovered,comingSoon, onMouseEnter, onMouseLeave }) => {
     return (
-        <div className="col-span-1 cardWork ">
-            <div className="bgWork" style={{ backgroundImage: `url(${props.imageWork[0]})` }}>
-                <img 
-                    src={props.imageWork[1]} 
-                    alt={props.titleWork} 
-                    className="imageWork"
-                    onMouseEnter={handleMouseEnter}
-                    onMouseLeave={handleMouseLeave}
-                />  
-            </div>
-            
-            <div className="descWork">{props.descWork}</div>
-            <div className="titleWork">{props.titleWork}</div>
-        </div>
-    )
-}
+    <div className={`col-span-2 md:col-span-1 cardWork ${isHovered ? 'hovered' : ''} ${comingSoon ? 'hoveredComingSoon' : ''}`}>
+      <div className="bgWork" style={{ backgroundImage: `url(${images[0]})` }}>
+        
+      <img 
+        src={images[1]} 
+        alt={title} 
+        className="imageWork"
+        onMouseEnter={onMouseEnter}
+        onMouseLeave={onMouseLeave}
+      />
+      {(comingSoon) && <div className={`comingSoon`}>Coming Soon !</div>} 
+      </div>
+      <div className="descWork">{description}</div>
+      <div className="titleWork">{title}</div>
+    </div>
+    
+  );
+};
 
-export default CardWork
+export default CardWork;
