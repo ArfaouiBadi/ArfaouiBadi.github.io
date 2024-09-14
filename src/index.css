@@ -111,6 +111,7 @@ body {
 
 .collapstedNavBar {
   display: none;
+  padding: 0;
 }
 
 /* Hero image styles */
@@ -125,7 +126,7 @@ body {
 
 /* Name styles */
 .name {
-  font-size: 25px;
+  font-size: 22px;
   font-weight: 500;
   color: white;
   transition: all 0.5s ease-in-out;
@@ -138,7 +139,7 @@ body {
 
 /* Job title styles */
 .jobTitle {
-  font-size: 17px;
+  font-size: 15px;
   font-weight: 200;
   color: #808080;
   cursor: pointer;
@@ -398,6 +399,7 @@ g {
 /* Name logo styles */
 .nameLogo {
   padding: 20px 0px;
+  
 }
 
 /* Box styles */
@@ -442,6 +444,7 @@ g {
   cursor: pointer;
   transition: all 0.3s ease-in-out;
   overflow: hidden;
+  margin-bottom: 30px;
 }
 
 .comingSoon {
@@ -467,7 +470,10 @@ g {
 
 .bgWork {
   position: relative;
-  padding: 30px 20px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  padding: 30px;
   border-radius: 10px;
   background-size: cover;
 }
@@ -481,28 +487,21 @@ g {
 }
 
 .imageWork {
-  height: 400px;
-  object-fit: cover;
-  object-position: top;
+  height:300px;
+  object-fit:contain;
+  object-position: center;
   align-items: center;
   border-radius: 10px;
   justify-content: center;
-  scale: 0.9;
+  scale: 0.95;
   cursor: pointer;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 
 .imageWork:hover {
   scale: 1;
 }
 
-.animate {
-  transition: scale 1s ease-in-out;
-}
-
-.animate:hover {
-  opacity: 0.8;
-}
 
 .descWork {
   margin-top: 20px;
@@ -533,8 +532,12 @@ g {
   font-weight: 500;
   text-align: center;
   cursor: pointer;  
-  transition: all 0.3s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  overflow: hidden;
 
+}
+.viewAllWorkBtn:hover{
+  background-color: #171717;
 }
 
 
@@ -553,7 +556,7 @@ g {
 
   .home {
     margin-left: 0;
-    margin-top: 50px;
+    margin-top: 80px;
     padding: 40px 20px;
   }
 
@@ -593,18 +596,17 @@ g {
   }
 
   .nameHeader {
-    padding: 0px 60px;
+    padding: 0 60px;
+    
   }
 
   .collapstedNavBar {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
-    padding: 20px 30px;
     border-left: 2px solid #80808049;
-    padding-right: 0;
     padding-left: 55px;
+   
   }
 
   .navbarCollapsed {
@@ -644,6 +646,7 @@ g {
   .contact-container {
     padding: 0;
   }
+  
 }
 
 /* Responsive styles for screens smaller than 500px */

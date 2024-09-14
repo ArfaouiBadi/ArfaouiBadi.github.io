@@ -87,7 +87,10 @@
           }
           </div>
         </div>
-        <div className="viewAllWorkBtn">View All Work</div>
+        <Link to={'projects'}>
+        <div className="viewAllWorkBtn">
+        View All Work
+        </div></Link>
       </div>
     );
   };
