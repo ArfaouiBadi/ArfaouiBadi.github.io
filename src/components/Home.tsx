@@ -1,98 +1,40 @@
-  import { Link } from "react-router-dom";
-  import heroImage from "../assets/hero.jpg";
-  import CardWork from "./CardWork";
+import { socials } from "@/constants";
+import heroImage from "../assets/hero.jpg";
+import About from "./About";
+import Skills from "./Skills";
+import Experience from "./Experience";
+import Projects from "./Projects";
+import Contact from "./Contact";
+import AcademicProjects from "./AcademicProjects";
 
-  import { projects, socials } from "@/constants";
-  import {useState } from "react";
-  type Project = {
-    title: string;
-    description: string;
-    images: string[] | undefined;
-    technologies: string[];
-    comingSoon: boolean;
-    github: string;
-  };
+const Home = () => {
+  return (
+    <main className="flex flex-col space-y-8">
+      <section id="about" className="py-12 px-4">
+        <About />
+      </section>
 
-  const Home = () => {
-    const [hoveredCard, setHoveredCard] = useState<number | null>(null);
-   
-    const handleMouseEnter = (index: number) => {
-      setHoveredCard(index);
-    };
+      <section id="skills" className="py-12 px-4">
+        <Skills />
+      </section>
 
-    const handleMouseLeave = () => {
-      setHoveredCard(null);
-    };
-    return (
-      <div className="home">
-        <div className="info">
-          <img src={heroImage} alt="home" className="heroImage" />
-          <div className="status">
+      <section id="experience" className="py-12 px-4">
+        <Experience />
+      </section>
 
-            <div className="circle"></div>
-            <Link
-              to="/contact"
-              style={{ textDecoration: "none", color: "inherit" }}
-            >
-              Available
-            </Link>
-          </div>
-        </div>
+      {/* <section id="academic-projects" className="py-12 px-4">
+        <AcademicProjects />
+      </section> */}
 
-        <h1 className="introduction">
-          Hello , I'm Arfaoui Badi a fullstack developer
-        </h1>
-        <p className="description">
-          I am an individual who combines enthusiasm, self-motivation,
-          reliability,
-          <br /> responsibility, and hard work to achieve exceptional results.
-          <br />
-          My adaptability, teamwork skills, and ability to thrive under pressure
-          <br />
-          make me a valuable asset in any professional setting.
-        </p>
-        <div className="socials">
-          {
-            socials.map((social, index) => {
-              return (
-                <div className="socialIcon" key={index}>
-                  <a
-                    href={social.link}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    {social.icon}
-                  </a>
-                </div>
-              );
-          })
-          }
+      <section id="projects" className="py-12 px-4">
+        <Projects />
+      </section>
 
-        </div>
-        <h1 className="introduction">Featured Work</h1>
-        <div className="featuredWork">
-          <div className="grid grid-cols-2 grid-rows-2 gap-4">
-          {
-            projects.map((project:Project , index : number)=>{
-              return <CardWork
-              key={index}
-              images={[project.images![0], project.images![1]]}
-              title={project.title}
-              description={project.description}
-              isHovered={hoveredCard === 0}
-              onMouseEnter={() => handleMouseEnter(0)}
-              onMouseLeave={handleMouseLeave}
-              comingSoon={project.comingSoon}/>
-            })
-          }
-          </div>
-        </div>
-        <Link to={'projects'}>
-        <div className="viewAllWorkBtn">
-        View All Work
-        </div></Link>
-      </div>
-    );
-  };
+      <section id="contact" className="py-12 px-4">
+        <Contact />
+      </section>
+    </main>
+  );
+};
 
-  export default Home;
+export default Home;

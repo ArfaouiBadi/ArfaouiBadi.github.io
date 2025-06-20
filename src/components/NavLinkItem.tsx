@@ -1,13 +1,24 @@
-import { Link } from "react-router-dom";
 import { NavLinkItemProps } from "../interface";
 
 const NavLinkItem = (props: NavLinkItemProps) => {
-  
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    const targetElement = document.querySelector(props.path);
+    if (targetElement) {
+      targetElement.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
-    <Link className="navLink" to={props.path} style={{ textDecoration: 'none', color: 'inherit' }}>
+    <a
+      className={`navLink ${props.isActive ? "active" : ""}`}
+      href={props.path}
+      onClick={handleClick}
+      style={{ textDecoration: "none", color: "inherit" }}
+    >
       {props.icon}
       <span className="navLinkText">{props.title}</span>
-    </Link>
+    </a>
   );
 };
 

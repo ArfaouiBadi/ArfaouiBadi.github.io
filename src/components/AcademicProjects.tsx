@@ -1,62 +1,12 @@
-import { experiences } from "@/constants";
+import { academicProjects } from "@/constants";
+
+const typeColors: Record<string, string> = {
+  Academic: "bg-purple-900 text-purple-300",
+};
 
 const getLogo = (type: string) => {
-  if (type === "Internship") {
+  if (type === "Academic") {
     // Briefcase icon
-    return (
-      <svg
-        className="w-full h-full text-yellow-400"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          d="M12 12v.01M7 16v-1a4 4 0 014-4h2a4 4 0 014 4v1M3 8V7a2 2 0 012-2h2a2 2 0 012 2v1m6 0V7a2 2 0 012-2h2a2 2 0 012 2v1M3 8h18M3 8v10a2 2 0 002 2h14a2 2 0 002-2V8"
-        />
-      </svg>
-    );
-  }
-  if (type === "Experience") {
-    // Academic cap icon
-    return (
-      <svg
-        className="w-full h-full text-blue-400"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          d="M12 14l9-5-9-5-9 5 9 5zm0 0v6m0 0H6m6 0h6"
-        />
-      </svg>
-    );
-  }
-  if (type === "Project") {
-    // Lightbulb icon
-    return (
-      <svg
-        className="w-full h-full text-green-400"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          d="M12 3v1m0 16v1m8.485-8.485l-.707.707M4.222 4.222l-.707.707M21 12h-1M4 12H3m16.485 4.485l-.707-.707M4.222 19.778l-.707-.707M12 5a7 7 0 00-7 7c0 3.866 3.134 7 7 7s7-3.134 7-7a7 7 0 00-7-7z"
-        />
-      </svg>
-    );
-  }
-  if (type === "Freelance") {
-    // User icon
     return (
       <svg
         className="w-full h-full text-purple-400"
@@ -68,7 +18,7 @@ const getLogo = (type: string) => {
           strokeLinecap="round"
           strokeLinejoin="round"
           strokeWidth={2}
-          d="M5.121 17.804A9 9 0 1112 21a9 9 0 01-6.879-3.196z"
+          d="M12 14l9-5-9-5-9 5 9 5zm0 0v6m0 0H6m6 0h6"
         />
       </svg>
     );
@@ -91,29 +41,20 @@ const getLogo = (type: string) => {
   );
 };
 
-const typeColors: Record<string, string> = {
-  Internship: "bg-yellow-700 text-yellow-300",
-  Experience: "bg-blue-900 text-blue-300",
-  Project: "bg-green-900 text-green-300",
-  Freelance: "bg-purple-900 text-purple-300",
-};
-
-const Experience = () => {
+const AcademicProjects = () => {
   return (
-    <div className="mx-auto max-w-8xl">
+    <div className="mx-auto">
       <div className="text-center mb-16">
         <h1 className="text-4xl md:text-5xl font-extrabold mb-4 text-accent">
-          Experience Timeline
+          Academic Projects
         </h1>
         <p
           className="text-zinc-400 text-lg max-w-3xl mx-auto animate-fadeIn"
           style={{ animationDelay: "0.2s" }}
         >
-          A collection of my professional experiences, from internships to
-          freelance projects.
+          A collection of my academic projects, from university to personal.
         </p>
       </div>
-
       <div className="relative">
         {/* Timeline vertical line */}
         <div
@@ -122,7 +63,7 @@ const Experience = () => {
         />
 
         <div className="space-y-12">
-          {experiences.map((exp, idx) => (
+          {academicProjects.map((project, idx) => (
             <div
               key={idx}
               className="grid grid-cols-[1fr_auto_1fr] items-center gap-x-8"
@@ -133,20 +74,20 @@ const Experience = () => {
                     className="animate-fadeInRight"
                     style={{ animationDelay: `${idx * 0.2}s` }}
                   >
-                    <ExperienceCard exp={exp} />
+                    <AcademicProjectCard project={project} />
                   </div>
-                  <TimelineIcon type={exp.type} />
+                  <TimelineIcon type={project.type} />
                   <div></div>
                 </>
               ) : (
                 <>
                   <div></div>
-                  <TimelineIcon type={exp.type} />
+                  <TimelineIcon type={project.type} />
                   <div
                     className="animate-fadeInLeft"
                     style={{ animationDelay: `${idx * 0.2}s` }}
                   >
-                    <ExperienceCard exp={exp} />
+                    <AcademicProjectCard project={project} />
                   </div>
                 </>
               )}
@@ -164,43 +105,40 @@ const TimelineIcon = ({ type }: { type: string }) => (
   </div>
 );
 
-const ExperienceCard = ({ exp }: { exp: (typeof experiences)[0] }) => (
+const AcademicProjectCard = ({
+  project,
+}: {
+  project: (typeof academicProjects)[0];
+}) => (
   <div className="bg-zinc-900 p-6 rounded-xl shadow-lg transition-all duration-300 hover:shadow-2xl hover:bg-zinc-800 hover:scale-105 relative">
     <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-2">
       <span className="text-xl font-semibold text-accent drop-shadow">
-        {exp.title}
+        {project.title}
       </span>
-      <span className="text-sm text-zinc-400">{exp.date}</span>
+      <span className="text-sm text-zinc-400">{project.date}</span>
     </div>
     <div className="text-zinc-300 font-medium mb-3 flex items-center gap-2 flex-wrap">
-      {exp.company}
-      <span className="text-xs text-zinc-500">({exp.location})</span>
-      {exp.domain && (
-        <span className="bg-blue-900 text-blue-300 text-xs font-semibold px-2.5 py-1 rounded-full ml-2">
-          {exp.domain}
-        </span>
-      )}
-      {exp.type && (
+      {project.type && (
         <span
           className={`ml-2 text-xs font-semibold px-2.5 py-1 rounded-full ${
-            typeColors[exp.type] || "bg-zinc-800 text-zinc-300"
+            typeColors[project.type] || "bg-zinc-800 text-zinc-300"
           }`}
         >
-          {exp.type}
+          {project.type}
         </span>
       )}
     </div>
     <ul className="list-disc pl-5 text-zinc-400 text-sm leading-relaxed mb-4">
-      {exp.description.map((item, i) => (
+      {project.description.map((item, i) => (
         <li key={i}>{item}</li>
       ))}
     </ul>
     {/* Technologies display */}
     <div className="flex flex-col gap-2">
-      {exp.technologies_front && (
+      {project.technologies_front && (
         <div className="flex flex-wrap gap-2 items-center">
           <span className="font-semibold text-sm w-16">Front:</span>
-          {exp.technologies_front.map((tech, i) => (
+          {project.technologies_front.map((tech, i) => (
             <span
               key={i}
               className="bg-zinc-700 text-zinc-300 text-xs font-medium px-2.5 py-1 rounded-full"
@@ -210,23 +148,10 @@ const ExperienceCard = ({ exp }: { exp: (typeof experiences)[0] }) => (
           ))}
         </div>
       )}
-      {exp.technologies_back && (
+      {project.technologies_back && (
         <div className="flex flex-wrap gap-2 items-center">
           <span className="font-semibold text-sm w-16">Back:</span>
-          {exp.technologies_back.map((tech, i) => (
-            <span
-              key={i}
-              className="bg-zinc-700 text-zinc-300 text-xs font-medium px-2.5 py-1 rounded-full"
-            >
-              {tech}
-            </span>
-          ))}
-        </div>
-      )}
-      {exp.technologies_others && (
-        <div className="flex flex-wrap gap-2 items-center">
-          <span className="font-semibold text-sm w-16">Others:</span>
-          {exp.technologies_others.map((tech, i) => (
+          {project.technologies_back.map((tech, i) => (
             <span
               key={i}
               className="bg-zinc-700 text-zinc-300 text-xs font-medium px-2.5 py-1 rounded-full"
@@ -240,4 +165,4 @@ const ExperienceCard = ({ exp }: { exp: (typeof experiences)[0] }) => (
   </div>
 );
 
-export default Experience;
+export default AcademicProjects;

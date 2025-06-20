@@ -163,7 +163,6 @@ body {
   flex-direction: column;
   padding: 40px;
   flex: 5;
-  
 }
 
 /* Routes container styles */
@@ -211,7 +210,15 @@ body {
   background-color: #171717;
 }
 
+.navLink.active .navLinkText {
+  color: white;
+}
+
 .navLink:hover svg {
+  fill: white;
+}
+
+.navLink.active svg {
   fill: white;
 }
 
@@ -399,7 +406,6 @@ g {
 /* Name logo styles */
 .nameLogo {
   padding: 20px 0px;
-  
 }
 
 /* Box styles */
@@ -487,8 +493,8 @@ g {
 }
 
 .imageWork {
-  height:300px;
-  object-fit:contain;
+  height: 300px;
+  object-fit: contain;
   object-position: center;
   align-items: center;
   border-radius: 10px;
@@ -501,7 +507,6 @@ g {
 .imageWork:hover {
   scale: 1;
 }
-
 
 .descWork {
   margin-top: 20px;
@@ -522,7 +527,7 @@ g {
 .titleWork:hover {
   color: #fca311;
 }
-.viewAllWorkBtn{
+.viewAllWorkBtn {
   margin-top: 50px;
   width: 100%;
   padding: 15px 25px;
@@ -531,22 +536,13 @@ g {
   color: white;
   font-weight: 500;
   text-align: center;
-  cursor: pointer;  
+  cursor: pointer;
   transition: all 0.2s ease-in-out;
   overflow: hidden;
-
 }
-.viewAllWorkBtn:hover{
+.viewAllWorkBtn:hover {
   background-color: #171717;
 }
-
-
-
-
-
-
-
-
 
 /* Responsive styles for screens smaller than 768px */
 @media screen and (max-width: 768px) {
@@ -563,7 +559,6 @@ g {
   .routes-container {
     border-left: none;
     margin-left: 0;
-    
   }
 
   .cvBtn {
@@ -597,7 +592,6 @@ g {
 
   .nameHeader {
     padding: 0 60px;
-    
   }
 
   .collapstedNavBar {
@@ -606,7 +600,6 @@ g {
     justify-content: space-between;
     border-left: 2px solid #80808049;
     padding-left: 55px;
-   
   }
 
   .navbarCollapsed {
@@ -646,7 +639,6 @@ g {
   .contact-container {
     padding: 0;
   }
-  
 }
 
 /* Responsive styles for screens smaller than 500px */
@@ -662,4 +654,57 @@ g {
   .emailBtn {
     font-size: 15px;
   }
+}
+
+/* Project Modal Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease-out;
+}
+
+.animate-scaleIn {
+  animation: scaleIn 0.3s ease-out;
+}
+
+/* Carousel Image Transitions */
+.carousel-image {
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Modal Scrollbar Styling */
+.modal-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+
+.modal-scroll::-webkit-scrollbar-track {
+  background: #1f1f1f;
+  border-radius: 3px;
+}
+
+.modal-scroll::-webkit-scrollbar-thumb {
+  background: #404040;
+  border-radius: 3px;
+}
+
+.modal-scroll::-webkit-scrollbar-thumb:hover {
+  background: #606060;
 }
