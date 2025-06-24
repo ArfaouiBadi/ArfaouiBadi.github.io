@@ -1,11 +1,8 @@
-import { socials } from "@/constants";
-import heroImage from "../assets/hero.jpg";
 import About from "./About";
 import Skills from "./Skills";
 import Experience from "./Experience";
 import Projects from "./Projects";
 import Contact from "./Contact";
-import AcademicProjects from "./AcademicProjects";
 
 const Home = () => {
   return (

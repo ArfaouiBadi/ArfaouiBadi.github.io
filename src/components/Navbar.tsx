@@ -1,7 +1,5 @@
 import NavLinkItem from "./NavLinkItem";
 import { navLinkItems } from "../constants";
-import { NavLinkItemProps } from "@/interface";
-
 import CollapsedIcon from "./CollapsedIcon";
 import { useState, useEffect, useRef } from "react";
 import { gsap } from "gsap";

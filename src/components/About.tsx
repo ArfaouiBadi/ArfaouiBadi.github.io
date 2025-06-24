@@ -1,4 +1,4 @@
-import { aboutMe, socials } from "@/constants";
+import { socials } from "@/constants";
 import heroImage from "@/assets/hero.jpg";
 
 const About = () => {

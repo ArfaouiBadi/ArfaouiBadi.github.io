@@ -46,7 +46,7 @@ const categoryIcons: Record<string, JSX.Element> = {
       />
     </svg>
   ),
-  DevOps: (
+  Tools: (
     <svg
       className="w-8 h-8 text-purple-400"
       fill="none"

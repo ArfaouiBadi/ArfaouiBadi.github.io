@@ -1,5 +1,5 @@
-import React, { useEffect, useRef } from 'react';
-import { gsap } from 'gsap';
+import React, { useEffect, useRef } from "react";
+import { gsap } from "gsap";
 
 const withAnimation = (WrappedComponent: React.FC) => {
   return (props: any) => {
@@ -10,7 +10,7 @@ const withAnimation = (WrappedComponent: React.FC) => {
         gsap.fromTo(
           compRef.current,
           { y: 30, opacity: 0 },
-          { y: 0, opacity: 1, duration: 1, ease: 'power3.out' }
+          { y: 0, opacity: 1, duration: 1, ease: "power3.out" }
         );
       }
     }, []);

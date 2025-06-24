@@ -9,8 +9,6 @@ import Alamni4 from "./assets/projects/Alamni4.png";
 import Alamni5 from "./assets/projects/Alamni5.png";
 import Alamni6 from "./assets/projects/Alamni6.png";
 import Alamni7 from "./assets/projects/Alamni7.png";
-import portfolio from "./assets/projects/portfolio.png";
-import portfolioBg from "./assets/projects/portfolioBg.png";
 import swiftcure from "./assets/projects/swiftcure.png";
 import swiftcureBg from "./assets/projects/swiftcureBg.png";
 import clubManagement1 from "./assets/projects/clubManagement1.jpg";
@@ -430,11 +428,20 @@ const skills = [
   },
   {
     category: "Databases",
-    technologies: ["SQL", "Postgres", "Firebase", "MongoDB"],
+    technologies: ["MySQL", "Firebase", "MongoDB", "PostgreSQL"],
   },
+
   {
-    category: "DevOps",
-    technologies: ["Git", "DevOps", "Docker", "Kubernetes", "Power BI"],
+    category: "Tools",
+    technologies: [
+      "Power BI",
+      "VIM",
+      "Linux",
+      "Git",
+      "GitHub",
+      "Docker",
+      "Kubernetes",
+    ],
   },
 ];
 
@@ -519,7 +526,7 @@ const socials = [
     ),
   },
   {
-    link: "https://drive.google.com/file/d/1IECs7PlHxfgNYv6MYLbxI_ATnqJLfSel/view?usp=drive_link",
+    link: "https://drive.google.com/file/d/1tW60TQRfQlun7ij1iD4kbZOCtgQviTLv/view?usp=drive_link",
     icon: "Get CV",
   },
 ];
