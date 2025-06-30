@@ -115,35 +115,56 @@ const Experience = () => {
       </div>
 
       <div className="relative">
-        {/* Timeline vertical line */}
+        {/* Timeline vertical line - visible on all screens */}
         <div
-          className="absolute left-1/2 -translate-x-1/2 top-0 h-full w-0.5 bg-zinc-700"
-          style={{ zIndex: 0 }}
+          className="absolute left-1/2 -translate-x-1/2 top-0 h-full w-0.5 bg-zinc-700 z-0"
+          style={{ zIndex: -1 }}
         />
 
-        <div className="space-y-12">
+        <div className="space-y-8 md:space-y-12">
           {experiences.map((exp, idx) => (
             <div
               key={idx}
-              className="grid grid-cols-[1fr_auto_1fr] items-center gap-x-8"
+              className="md:grid md:grid-cols-[1fr_auto_1fr] md:items-center md:gap-x-8"
             >
+              {/* Mobile layout - single column */}
+              <div className="md:hidden">
+                <div className="flex items-center gap-4 mb-4">
+                  <TimelineIcon type={exp.type} />
+                  <div className="flex-1">
+                    <span className="text-sm text-zinc-400">{exp.date}</span>
+                  </div>
+                </div>
+                <div
+                  className="animate-fadeInUp"
+                  style={{ animationDelay: `${idx * 0.2}s` }}
+                >
+                  <ExperienceCard exp={exp} />
+                </div>
+              </div>
+
+              {/* Desktop layout - alternating columns */}
               {idx % 2 === 0 ? (
                 <>
                   <div
-                    className="animate-fadeInRight"
+                    className="hidden md:block animate-fadeInRight"
                     style={{ animationDelay: `${idx * 0.2}s` }}
                   >
                     <ExperienceCard exp={exp} />
                   </div>
-                  <TimelineIcon type={exp.type} />
-                  <div></div>
+                  <div className="hidden md:block">
+                    <TimelineIcon type={exp.type} />
+                  </div>
+                  <div className="hidden md:block"></div>
                 </>
               ) : (
                 <>
-                  <div></div>
-                  <TimelineIcon type={exp.type} />
+                  <div className="hidden md:block"></div>
+                  <div className="hidden md:block">
+                    <TimelineIcon type={exp.type} />
+                  </div>
                   <div
-                    className="animate-fadeInLeft"
+                    className="hidden md:block animate-fadeInLeft"
                     style={{ animationDelay: `${idx * 0.2}s` }}
                   >
                     <ExperienceCard exp={exp} />
@@ -165,75 +186,91 @@ const TimelineIcon = ({ type }: { type: string }) => (
 );
 
 const ExperienceCard = ({ exp }: { exp: (typeof experiences)[0] }) => (
-  <div className="bg-zinc-900 p-6 rounded-xl shadow-lg transition-all duration-300 hover:shadow-2xl hover:bg-zinc-800 hover:scale-105 relative">
+  <div className="bg-zinc-900 p-4 md:p-6 rounded-xl shadow-lg transition-all duration-300 hover:shadow-2xl hover:bg-zinc-800 hover:scale-105 relative">
     <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-2">
-      <span className="text-xl font-semibold text-accent drop-shadow">
+      <span className="text-lg md:text-xl font-semibold text-accent drop-shadow">
         {exp.title}
       </span>
-      <span className="text-sm text-zinc-400">{exp.date}</span>
+      <span className="text-sm text-zinc-400 hidden md:block">{exp.date}</span>
     </div>
-    <div className="text-zinc-300 font-medium mb-3 flex items-center gap-2 flex-wrap">
-      {exp.company}
+    <div className="text-zinc-300 font-medium mb-3 flex flex-col sm:flex-row sm:items-center gap-2 flex-wrap">
+      <span className="text-sm md:text-base">{exp.company}</span>
       <span className="text-xs text-zinc-500">({exp.location})</span>
-      {exp.domain && (
-        <span className="bg-blue-900 text-blue-300 text-xs font-semibold px-2.5 py-1 rounded-full ml-2">
-          {exp.domain}
-        </span>
-      )}
-      {exp.type && (
-        <span
-          className={`ml-2 text-xs font-semibold px-2.5 py-1 rounded-full ${
-            typeColors[exp.type] || "bg-zinc-800 text-zinc-300"
-          }`}
-        >
-          {exp.type}
-        </span>
-      )}
+      <div className="flex flex-wrap gap-2">
+        {exp.domain && (
+          <span className="bg-blue-900 text-blue-300 text-xs font-semibold px-2.5 py-1 rounded-full">
+            {exp.domain}
+          </span>
+        )}
+        {exp.type && (
+          <span
+            className={`text-xs font-semibold px-2.5 py-1 rounded-full ${
+              typeColors[exp.type] || "bg-zinc-800 text-zinc-300"
+            }`}
+          >
+            {exp.type}
+          </span>
+        )}
+      </div>
     </div>
     <ul className="list-disc pl-5 text-zinc-400 text-sm leading-relaxed mb-4">
       {exp.description.map((item, i) => (
-        <li key={i}>{item}</li>
+        <li key={i} className="mb-1">
+          {item}
+        </li>
       ))}
     </ul>
     {/* Technologies display */}
     <div className="flex flex-col gap-2">
       {exp.technologies_front && (
-        <div className="flex flex-wrap gap-2 items-center">
-          <span className="font-semibold text-sm w-16">Front:</span>
-          {exp.technologies_front.map((tech, i) => (
-            <span
-              key={i}
-              className="bg-zinc-700 text-zinc-300 text-xs font-medium px-2.5 py-1 rounded-full"
-            >
-              {tech}
-            </span>
-          ))}
+        <div className="flex flex-col sm:flex-row sm:flex-wrap gap-2 items-start sm:items-center">
+          <span className="font-semibold text-sm w-16 flex-shrink-0">
+            Front:
+          </span>
+          <div className="flex flex-wrap gap-2">
+            {exp.technologies_front.map((tech, i) => (
+              <span
+                key={i}
+                className="bg-zinc-700 text-zinc-300 text-xs font-medium px-2.5 py-1 rounded-full"
+              >
+                {tech}
+              </span>
+            ))}
+          </div>
         </div>
       )}
       {exp.technologies_back && (
-        <div className="flex flex-wrap gap-2 items-center">
-          <span className="font-semibold text-sm w-16">Back:</span>
-          {exp.technologies_back.map((tech, i) => (
-            <span
-              key={i}
-              className="bg-zinc-700 text-zinc-300 text-xs font-medium px-2.5 py-1 rounded-full"
-            >
-              {tech}
-            </span>
-          ))}
+        <div className="flex flex-col sm:flex-row sm:flex-wrap gap-2 items-start sm:items-center">
+          <span className="font-semibold text-sm w-16 flex-shrink-0">
+            Back:
+          </span>
+          <div className="flex flex-wrap gap-2">
+            {exp.technologies_back.map((tech, i) => (
+              <span
+                key={i}
+                className="bg-zinc-700 text-zinc-300 text-xs font-medium px-2.5 py-1 rounded-full"
+              >
+                {tech}
+              </span>
+            ))}
+          </div>
         </div>
       )}
       {exp.technologies_others && (
-        <div className="flex flex-wrap gap-2 items-center">
-          <span className="font-semibold text-sm w-16">Others:</span>
-          {exp.technologies_others.map((tech, i) => (
-            <span
-              key={i}
-              className="bg-zinc-700 text-zinc-300 text-xs font-medium px-2.5 py-1 rounded-full"
-            >
-              {tech}
-            </span>
-          ))}
+        <div className="flex flex-col sm:flex-row sm:flex-wrap gap-2 items-start sm:items-center">
+          <span className="font-semibold text-sm w-16 flex-shrink-0">
+            Others:
+          </span>
+          <div className="flex flex-wrap gap-2">
+            {exp.technologies_others.map((tech, i) => (
+              <span
+                key={i}
+                className="bg-zinc-700 text-zinc-300 text-xs font-medium px-2.5 py-1 rounded-full"
+              >
+                {tech}
+              </span>
+            ))}
+          </div>
         </div>
       )}
     </div>

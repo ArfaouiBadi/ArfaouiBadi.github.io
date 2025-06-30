@@ -708,3 +708,81 @@ g {
 .modal-scroll::-webkit-scrollbar-thumb:hover {
   background: #606060;
 }
+
+/* Legacy Computer 3D Model Styles */
+.legacy-computer-container {
+  width: 100%;
+  max-width: 500px;
+  margin: 20px auto;
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease-in-out;
+}
+
+.legacy-computer-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+}
+
+.legacy-computer-container canvas {
+  display: block;
+  cursor: grab;
+}
+
+.legacy-computer-container canvas:active {
+  cursor: grabbing;
+}
+
+/* Computer Model 3D Model Styles */
+.computer-model-container {
+  width: 100%;
+  max-width: 600px;
+  margin: 20px auto;
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease-in-out;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+  border: 1px solid #333;
+}
+
+.computer-model-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+}
+
+.computer-model-container canvas {
+  display: block;
+  cursor: grab;
+  border-radius: 12px;
+}
+
+.computer-model-container canvas:active {
+  cursor: grabbing;
+}
+
+/* Responsive adjustments for the 3D computer */
+@media screen and (max-width: 768px) {
+  .legacy-computer-container {
+    max-width: 100%;
+    height: 300px;
+  }
+
+  .computer-model-container {
+    max-width: 100%;
+    height: 300px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .legacy-computer-container {
+    height: 250px;
+  }
+
+  .computer-model-container {
+    height: 250px;
+  }
+}
