@@ -5,7 +5,7 @@ import * as THREE from "three";
 
 function ComputerModel() {
   const modelRef = useRef<THREE.Group>(null);
-  const { scene } = useGLTF("/commodore_64__computer_full_pack.glb");
+  const { scene } = useGLTF("/computer_full_pack.glb");
 
   useFrame(() => {
     if (modelRef.current) {
