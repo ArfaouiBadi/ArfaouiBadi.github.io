@@ -82,8 +82,9 @@ const About = () => {
             );
           })}
         </div>
+
         <div
-          className="computer-model-container"
+          className="computer-model-container hidden md:block"
           style={{
             width: "100%",
             height: "400px",
