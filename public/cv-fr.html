@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Arfaoui Badi — CV</title>
+<style>
+  :root {
+    --ink: #1a1a1a;
+    --muted: #5c5c5c;
+    --line: #e2e2e2;
+    --accent: #1f3a5f;
+    --tag-bg: #f1f3f6;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { font-size: 10.2px; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: var(--ink);
+    line-height: 1.45;
+    background: #f5f5f5;
+  }
+
+  .page {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 0 auto;
+    background: #fff;
+    padding: 14mm 15mm;
+  }
+
+  header {
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 10px;
+    margin-bottom: 16px;
+  }
+  .name {
+    font-size: 2.7rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: var(--accent);
+    text-transform: uppercase;
+  }
+  .role { font-size: 1.15rem; font-weight: 500; color: var(--ink); margin-top: 2px; }
+  .tagline { font-size: 0.95rem; color: var(--muted); margin-top: 1px; }
+  .contact {
+    display: flex; flex-wrap: wrap; gap: 4px 16px;
+    margin-top: 9px; font-size: 0.9rem; color: var(--muted);
+  }
+  .contact a { color: var(--muted); text-decoration: none; }
+  .contact span::before { content: "•"; margin-right: 7px; color: var(--line); }
+  .contact span:first-child::before { content: none; }
+
+  .body-grid { display: grid; grid-template-columns: 1fr 1.9fr; gap: 22px; }
+  section { margin-bottom: 15px; }
+
+  h2 {
+    font-size: 0.82rem; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 1.3px; color: var(--accent);
+    border-bottom: 1px solid var(--line); padding-bottom: 3px; margin-bottom: 8px;
+  }
+
+  .summary { font-size: 0.95rem; color: #333; text-align: justify; }
+
+  .skill-group { margin-bottom: 10px; }
+  .skill-group h3 { font-size: 0.86rem; font-weight: 600; margin-bottom: 4px; color: var(--ink); }
+  .tags { display: flex; flex-wrap: wrap; gap: 4px; }
+  .tag {
+    font-size: 0.78rem; background: var(--tag-bg); color: #38465a;
+    padding: 2px 7px; border-radius: 4px; white-space: nowrap;
+  }
+
+  .edu-item { margin-bottom: 9px; }
+  .edu-item .t { font-weight: 600; font-size: 0.9rem; }
+  .edu-item .s { font-size: 0.85rem; color: var(--muted); }
+  .edu-item .d { font-size: 0.8rem; color: var(--muted); font-style: italic; }
+
+  .lang-row { display: flex; justify-content: space-between; font-size: 0.88rem; margin-bottom: 3px; }
+  .lang-row span:last-child { color: var(--muted); }
+
+  .entry { margin-bottom: 12px; }
+  .entry-head { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; }
+  .entry-title { font-size: 0.97rem; font-weight: 600; }
+  .entry-period { font-size: 0.8rem; color: var(--muted); white-space: nowrap; }
+  .entry-sub { font-size: 0.88rem; color: var(--accent); font-weight: 500; margin-bottom: 3px; }
+  .entry ul { list-style: none; margin: 2px 0 4px; }
+  .entry li { font-size: 0.88rem; color: #333; padding-left: 12px; position: relative; margin-bottom: 1.5px; }
+  .entry li::before { content: "–"; position: absolute; left: 0; color: var(--accent); }
+  .entry .techline { font-size: 0.8rem; color: var(--muted); }
+  .entry .techline b { color: #444; font-weight: 600; }
+
+  .project { margin-bottom: 9px; }
+  .project .pt { font-size: 0.93rem; font-weight: 600; }
+  .project .pd { font-size: 0.86rem; color: #333; }
+  .project .px { font-size: 0.78rem; color: var(--muted); margin-top: 1px; }
+
+  @media print {
+    html { font-size: 10px; }
+    body { background: #fff; }
+    .page { margin: 0; padding: 12mm 14mm; box-shadow: none; }
+    @page { size: A4; margin: 0; }
+    .entry, .project, .edu-item { break-inside: avoid; }
+    section { break-inside: avoid-page; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header>
+    <div class="name">Arfaoui Badi</div>
+    <div class="role">Ingénieur Logiciel</div>
+    <div class="tagline">Systèmes Bancaires &amp; Technologies Financières</div>
+    <div class="contact">
+      <span>+216 98 147 936</span>
+      <span><a href="mailto:ArfaouiBadi19@gmail.com">ArfaouiBadi19@gmail.com</a></span>
+      <span><a href="https://www.linkedin.com/in/badi-arfaoui/">linkedin.com/in/badi-arfaoui</a></span>
+      <span><a href="https://github.com/ArfaouiBadi">github.com/ArfaouiBadi</a></span>
+      <span><a href="https://arfaouibadi.github.io">arfaouibadi.github.io</a></span>
+    </div>
+  </header>
+
+  <section>
+    <p class="summary">Ingénieur logiciel spécialisé dans la conception de solutions sécurisées, évolutives et performantes pour le secteur bancaire et financier. Axé sur les systèmes bancaires centraux (core banking), la messagerie Swift MT/MX, la transformation ISO 20022, les tableaux de bord d'analyse financière, les plateformes de cybersécurité et les applications web d'entreprise — alliant ingénierie backend, architecture frontend, principes de sécurité et compréhension métier pour livrer des solutions fiables dans des environnements financiers critiques.</p>
+  </section>
+
+  <div class="body-grid">
+
+    <aside>
+
+      <section>
+        <h2>Compétences</h2>
+
+        <div class="skill-group">
+          <h3>Backend</h3>
+          <div class="tags">
+            <span class="tag">Java</span><span class="tag">Spring Boot</span>
+            <span class="tag">Spring Cloud</span><span class="tag">API REST</span>
+            <span class="tag">Microservices</span><span class="tag">RabbitMQ</span>
+            <span class="tag">PostgreSQL</span><span class="tag">MySQL</span>
+            <span class="tag">MongoDB</span><span class="tag">Flask</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <h3>Frontend</h3>
+          <div class="tags">
+            <span class="tag">Angular</span><span class="tag">TypeScript</span>
+            <span class="tag">Tailwind CSS</span><span class="tag">Chart.js</span>
+            <span class="tag">Highcharts</span><span class="tag">Tableaux de bord</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <h3>Banque &amp; FinTech</h3>
+          <div class="tags">
+            <span class="tag">Core Banking</span><span class="tag">Swift MT</span>
+            <span class="tag">ISO 20022 MX</span><span class="tag">Conversion MT/MX</span>
+            <span class="tag">Systèmes de paiement</span><span class="tag">Validation de messages</span>
+            <span class="tag">Reporting financier</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <h3>Cybersécurité</h3>
+          <div class="tags">
+            <span class="tag">Architecture sécurisée</span><span class="tag">Analyse de vulnérabilités</span>
+            <span class="tag">SOC / SIEM</span><span class="tag">ISO 27001</span>
+            <span class="tag">Swift CSP</span><span class="tag">Audit &amp; Conformité</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <h3>IA &amp; DevOps</h3>
+          <div class="tags">
+            <span class="tag">Systèmes RAG</span><span class="tag">Prompt engineering</span>
+            <span class="tag">Automatisation</span><span class="tag">Docker</span>
+            <span class="tag">Nginx</span><span class="tag">Git</span>
+            <span class="tag">Linux</span><span class="tag">Keycloak</span>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Formation</h2>
+        <div class="edu-item">
+          <div class="t">Licence en Technologies de l'Informatique</div>
+          <div class="s">ISET Radès — Développement des Systèmes d'Information</div>
+          <div class="d">2022 – 2025</div>
+        </div>
+        <div class="edu-item">
+          <div class="t">Baccalauréat — Sciences de l'Informatique</div>
+          <div class="s">Lycée Bouarada, Siliana</div>
+          <div class="d">2019 – 2022</div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Langues</h2>
+        <div class="lang-row"><span>Arabe</span><span>Langue maternelle</span></div>
+        <div class="lang-row"><span>Français</span><span>Courant</span></div>
+        <div class="lang-row"><span>Anglais</span><span>Professionnel</span></div>
+      </section>
+
+      <section>
+        <h2>Bénévolat</h2>
+        <div class="edu-item">
+          <div class="t">Webmaster &amp; Responsable Média</div>
+          <div class="s">IEEE ISET Radès Student Branch</div>
+          <div class="d">Mai 2023 – Juin 2025</div>
+        </div>
+      </section>
+
+    </aside>
+
+    <main>
+
+      <section>
+        <h2>Expérience</h2>
+
+        <div class="entry">
+          <div class="entry-head">
+            <span class="entry-title">Projet de Fin d'Études — Plateforme de Messagerie SWIFT</span>
+            <span class="entry-period">Jan 2025 – Juin 2025</span>
+          </div>
+          <div class="entry-sub">Banking Intelligence Consulting (BIC) · Tunis · Stage</div>
+          <ul>
+            <li>Conception d'une solution basée sur des microservices pour l'analyse et la gestion des messages financiers SWIFT.</li>
+            <li>Architecture de la plateforme sur Spring Cloud avec découverte de services Netflix Eureka et contrôle d'accès Keycloak.</li>
+          </ul>
+          <div class="techline"><b>Technologies :</b> Angular, Spring Boot, Spring Cloud, Microservices, PostgreSQL, MongoDB, Flask, Keycloak, Docker</div>
+        </div>
+
+        <div class="entry">
+          <div class="entry-head">
+            <span class="entry-title">Analyste de Données &amp; Développeur Industriel</span>
+            <span class="entry-period">Sep 2024 – Fév 2025</span>
+          </div>
+          <div class="entry-sub">Société Tunisienne de Sidérurgie — El Fouladh · Tunis · Freelance</div>
+          <ul>
+            <li>Conception de tableaux de bord interactifs Power BI pour l'analyse industrielle et les KPI.</li>
+            <li>Développement d'applications web pour surveiller et analyser les journaux machines en vue de la maintenance prédictive.</li>
+            <li>Intégration de Python aux systèmes industriels via WinCC et des scripts personnalisés.</li>
+          </ul>
+          <div class="techline"><b>Technologies :</b> Power BI, Python, Flask, Node.js, WinCC</div>
+        </div>
+
+        <div class="entry">
+          <div class="entry-head">
+            <span class="entry-title">Développeur Full-Stack — Healverse</span>
+            <span class="entry-period">Jan 2024 – Fév 2024</span>
+          </div>
+          <div class="entry-sub">Instead · À distance · Stage</div>
+          <ul>
+            <li>Développement d'une plateforme SaaS full-stack pour l'industrie pharmaceutique.</li>
+            <li>Conception d'une interface UX/UI de tableau de bord améliorant l'efficacité opérationnelle.</li>
+          </ul>
+          <div class="techline"><b>Technologies :</b> Vue.js, PrimeVue, Pinia, NestJS, Prisma, MongoDB, Docker</div>
+        </div>
+
+        <div class="entry">
+          <div class="entry-head">
+            <span class="entry-title">Stagiaire Développeur Web — Animeverse</span>
+            <span class="entry-period">Août 2023 – Sep 2023</span>
+          </div>
+          <div class="entry-sub">Swiftcode · À distance · Stage</div>
+          <ul>
+            <li>Développement d'une plateforme e-commerce au sein d'une équipe de cinq ingénieurs — première expérience professionnelle.</li>
+          </ul>
+          <div class="techline"><b>Technologies :</b> React, Redux, Node.js, Express, MongoDB, Bootstrap</div>
+        </div>
+
+        <div class="entry">
+          <div class="entry-head">
+            <span class="entry-title">Programme d'Ingénierie Logicielle</span>
+            <span class="entry-period">Mar 2023 – Avr 2023</span>
+          </div>
+          <div class="entry-sub">ALX Africa · En ligne</div>
+          <ul>
+            <li>Formation intensive en Linux, C, DevOps et programmation bas niveau.</li>
+          </ul>
+          <div class="techline"><b>Technologies :</b> C, Python, JavaScript, Linux, Git, DevOps</div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Projets Phares</h2>
+
+        <div class="project">
+          <div class="pt">Plateforme de Core Banking &amp; Messagerie Financière</div>
+          <div class="pd">Plateforme d'entreprise pour créer, valider, convertir, approuver et analyser les messages Swift MT et ISO 20022 MX, avec accès basé sur les rôles, tableaux de bord et reporting.</div>
+          <div class="px">Angular · Spring Boot · Swift MT · ISO 20022 · PostgreSQL</div>
+        </div>
+
+        <div class="project">
+          <div class="pt">Tableau de Bord d'Analyse du Trafic Swift</div>
+          <div class="pd">Tableau de bord d'analyse du trafic de messages — catégories, principaux clients/contreparties, devises, volumes FX, soldes des correspondants et indicateurs de croissance.</div>
+          <div class="px">Angular · Highcharts · Chart.js · Java</div>
+        </div>
+
+        <div class="project">
+          <div class="pt">Moteur de Conversion MT / MX</div>
+          <div class="pd">Moteur de conversion et de validation transformant Swift MT en ISO 20022 MX via parsing structuré, règles de mapping métier et génération XML.</div>
+          <div class="px">Java · XML · XSD · Swift · ISO 20022</div>
+        </div>
+
+        <div class="project">
+          <div class="pt">Plateforme de Cybersécurité &amp; SOC Intelligence</div>
+          <div class="pd">Plateforme pour normaliser les événements de sécurité, analyser les incidents et offrir une visibilité prête pour l'audit des opérations de sécurité.</div>
+          <div class="px">Spring Boot · RabbitMQ · IA · SOC · OCSF</div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+</div>
+</body>
+</html>

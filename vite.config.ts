@@ -9,4 +9,9 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  build: {
+    // The 3D scene (Three.js) is intentionally code-split into its own
+    // async chunk — it never blocks first paint, so a larger size is fine.
+    chunkSizeWarningLimit: 900,
+  },
 })
