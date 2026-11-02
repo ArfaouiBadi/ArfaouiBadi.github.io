@@ -31,8 +31,8 @@ export const profile = {
   email: "ArfaouiBadi19@gmail.com",
   linkedin: "https://www.linkedin.com/in/badi-arfaoui/",
   github: "https://github.com/ArfaouiBadi",
-  resumeUrl:
-    "https://drive.google.com/file/d/1tW60TQRfQlun7ij1iD4kbZOCtgQviTLv/view?usp=drive_link",
+  // ponytail: printed from public/cv.html; re-print when the CV changes
+  resumeUrl: "/Arfaoui-Badi-CV.pdf",
 };
 
 /* EmailJS — public (client-side) credentials, safe to ship.
