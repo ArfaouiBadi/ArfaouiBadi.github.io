@@ -47,7 +47,7 @@
 
 @layer components {
   .section {
-    @apply mx-auto w-full max-w-5xl px-6 py-16 md:py-24;
+    @apply mx-auto w-full max-w-6xl px-6 py-16 md:py-24;
   }
 
   .card {
@@ -55,10 +55,10 @@
   }
 
   .card-lift {
-    @apply transition-all duration-300 hover:-translate-y-0.5 hover:border-gold-400/40 hover:shadow-[0_14px_36px_-18px_rgba(212,169,78,0.25)];
+    @apply transition-all duration-300 hover:border-gold-400/40;
   }
 
-  /* Animated underline — gold line grows from left on hover */
+  /* Underline grows from the left on hover */
   .u-line {
     background-image: linear-gradient(currentColor, currentColor);
     background-repeat: no-repeat;
@@ -72,7 +72,7 @@
   }
 
   .label {
-    @apply text-[11px] font-medium uppercase tracking-[0.14em] text-zinc-500;
+    @apply text-[11px] font-medium uppercase tracking-[0.14em] text-zinc-400;
   }
 
   .tag {
@@ -80,7 +80,7 @@
   }
 
   .btn {
-    @apply inline-flex items-center justify-center gap-2 rounded-md px-4 py-2.5 text-sm font-medium transition-colors disabled:cursor-not-allowed disabled:opacity-60;
+    @apply inline-flex items-center justify-center gap-2 rounded-md px-4 py-2.5 text-sm font-medium transition-[color,background-color,border-color,transform] duration-200 active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-60;
   }
 
   .btn-primary {
@@ -96,7 +96,18 @@
   }
 
   .field-input {
-    @apply w-full rounded-md border border-line bg-ink-900 px-3.5 py-2.5 text-sm text-zinc-100 outline-none transition-colors placeholder:text-zinc-600 focus:border-gold-400/70;
+    @apply w-full rounded-md border border-line bg-ink-900 px-3.5 py-2.5 text-sm text-zinc-100 outline-none transition-colors placeholder:text-zinc-500 focus:border-gold-400/70 [&:user-invalid]:border-red-400/70;
+  }
+
+  /* Shown by the browser's own :user-invalid, i.e. only after the visitor has touched the field */
+  .field-error {
+    @apply mt-1.5 hidden text-xs text-red-300 peer-[:user-invalid]:block;
+  }
+
+  /* Paper grain over the whole page; fixed so it never repaints while scrolling */
+  .grain {
+    @apply pointer-events-none fixed inset-0 z-[60] opacity-[0.035];
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   }
 }
 

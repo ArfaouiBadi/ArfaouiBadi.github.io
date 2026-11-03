@@ -2,7 +2,6 @@ import { useEffect, useRef, useState, type FormEvent } from "react";
 import emailjs from "@emailjs/browser";
 import { AlertCircle, ArrowUpRight, CheckCircle2 } from "lucide-react";
 import SectionHeading from "./ui/SectionHeading";
-import Reveal from "./ui/Reveal";
 import {
   contactChannels,
   contactIntro,
@@ -57,14 +56,9 @@ export default function Contact() {
 
   return (
     <section id="contact" className="section">
-      <SectionHeading
-        eyebrow="Contact"
-        title="Get in touch"
-        subtitle={contactIntro}
-      />
+      <SectionHeading title="Get in touch" subtitle={contactIntro} />
 
       <div className="mt-10 grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
-        <Reveal>
           <ul>
             {contactChannels.map((channel) => (
               <li key={channel.kind}>
@@ -83,10 +77,8 @@ export default function Contact() {
               </li>
             ))}
           </ul>
-        </Reveal>
 
-        <Reveal delay={0.08}>
-          <form onSubmit={handleSubmit} className="card p-6 md:p-7" noValidate>
+          <form onSubmit={handleSubmit} className="card p-6 md:p-7">
             <div className="grid gap-4 sm:grid-cols-2">
               <div>
                 <label htmlFor="contact-name" className="field-label">
@@ -100,8 +92,9 @@ export default function Contact() {
                   required
                   autoComplete="name"
                   placeholder="Your name"
-                  className="field-input"
+                  className="field-input peer"
                 />
+                <p className="field-error">Add your name so I know who's writing.</p>
               </div>
               <div>
                 <label htmlFor="contact-email" className="field-label">
@@ -115,8 +108,9 @@ export default function Contact() {
                   required
                   autoComplete="email"
                   placeholder="you@company.com"
-                  className="field-input"
+                  className="field-input peer"
                 />
+                <p className="field-error">Enter an email I can reply to, like you@company.com.</p>
               </div>
             </div>
 
@@ -131,8 +125,9 @@ export default function Contact() {
                 required
                 rows={5}
                 placeholder="Tell me about your project, role or idea…"
-                className="field-input resize-none"
+                className="field-input peer resize-none"
               />
+              <p className="field-error">Write a short message first.</p>
             </div>
 
             <button
@@ -158,7 +153,6 @@ export default function Contact() {
               )}
             </div>
           </form>
-        </Reveal>
       </div>
     </section>
   );

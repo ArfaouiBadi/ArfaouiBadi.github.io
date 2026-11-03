@@ -7,7 +7,6 @@ import Skills from "@/components/Skills";
 import Projects from "@/components/Projects";
 import Experience from "@/components/Experience";
 import Architecture from "@/components/Architecture";
-import TechStack from "@/components/TechStack";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
@@ -28,10 +27,10 @@ export default function App() {
         <Projects />
         <Experience />
         <Architecture />
-        <TechStack />
         <Contact />
       </main>
       <Footer />
+      <div className="grain" aria-hidden="true" />
     </div>
   );
 }

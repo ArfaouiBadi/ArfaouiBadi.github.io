@@ -1,25 +1,3 @@
-import {
-  Activity,
-  ArrowLeftRight,
-  BarChart3,
-  Blocks,
-  BrainCircuit,
-  Gauge,
-  HeartPulse,
-  KeyRound,
-  Landmark,
-  LayoutDashboard,
-  Network,
-  Pill,
-  Radar,
-  ScrollText,
-  Server,
-  ShieldCheck,
-  ShoppingBag,
-  Webhook,
-  type LucideIcon,
-} from "lucide-react";
-
 /* ------------------------------------------------------------------ */
 /*  Identity                                                          */
 /* ------------------------------------------------------------------ */
@@ -56,16 +34,8 @@ export const navLinks = [
 /* ------------------------------------------------------------------ */
 
 export const aboutParagraph =
-  "I'm a software engineer from Tunis working on systems for banks and financial institutions. Most recently I built a SWIFT messaging platform at Banking Intelligence Consulting — creating, validating and converting MT and ISO 20022 messages, with the dashboards and access control around them. I care about the unglamorous parts of financial software: validation, auditability, and interfaces that make dense data readable. Before banking, I shipped SaaS products for healthcare, pharmacy and e-commerce teams.";
+  "I'm a software engineer from Tunis working on systems for banks and financial institutions. I work as a software developer at Banking Intelligence Consulting, where I joined after building their SWIFT messaging platform as my graduation project — creating, validating and converting MT and ISO 20022 messages, with the dashboards and access control around them. I care about the unglamorous parts of financial software: validation, auditability, and interfaces that make dense data readable. Before banking, I shipped SaaS products for healthcare, pharmacy and e-commerce teams.";
 
-export const aboutHighlights = [
-  "Core banking systems",
-  "Swift MT / MX messaging",
-  "ISO 20022 transformation",
-  "Financial analytics dashboards",
-  "Cybersecurity platforms",
-  "Enterprise web applications",
-];
 
 /* ------------------------------------------------------------------ */
 /*  Expertise / Skills                                                */
@@ -73,18 +43,12 @@ export const aboutHighlights = [
 
 export interface SkillDomain {
   title: string;
-  summary: string;
-  icon: LucideIcon;
-  accent: string;
   skills: string[];
 }
 
 export const skillDomains: SkillDomain[] = [
   {
     title: "Backend Engineering",
-    summary: "Resilient services and data layers built to scale.",
-    icon: Server,
-    accent: "#3b82f6",
     skills: [
       "Java",
       "Spring Boot",
@@ -98,9 +62,6 @@ export const skillDomains: SkillDomain[] = [
   },
   {
     title: "Frontend Engineering",
-    summary: "Clean, data-dense interfaces and dashboards.",
-    icon: LayoutDashboard,
-    accent: "#22d3ee",
     skills: [
       "Angular",
       "TypeScript",
@@ -113,9 +74,6 @@ export const skillDomains: SkillDomain[] = [
   },
   {
     title: "Banking & FinTech",
-    summary: "Domain depth in financial messaging and payments.",
-    icon: Landmark,
-    accent: "#f3c45e",
     skills: [
       "Core Banking Systems",
       "Swift MT Messages",
@@ -129,9 +87,6 @@ export const skillDomains: SkillDomain[] = [
   },
   {
     title: "Cybersecurity",
-    summary: "Security-first design, analysis and compliance.",
-    icon: ShieldCheck,
-    accent: "#3b82f6",
     skills: [
       "Secure Architecture",
       "Vulnerability Analysis",
@@ -145,9 +100,6 @@ export const skillDomains: SkillDomain[] = [
   },
   {
     title: "AI & Automation",
-    summary: "Intelligent tooling that accelerates decisions.",
-    icon: BrainCircuit,
-    accent: "#22d3ee",
     skills: [
       "AI-assisted analysis",
       "RAG systems",
@@ -164,21 +116,19 @@ export const skillDomains: SkillDomain[] = [
 /* ------------------------------------------------------------------ */
 
 export interface Project {
-  index: number;
   title: string;
   description: string;
   tags: string[];
-  icon: LucideIcon;
-  accent: string;
   github?: string;
+  /** Steps a message goes through, shown on the lead project. */
+  flow?: string[];
 }
 
 export const projects: Project[] = [
   {
-    index: 1,
     title: "Core Banking & Financial Messaging Platform",
     description:
-      "An enterprise platform for creating, validating, converting, approving, and analyzing Swift MT and ISO 20022 MX financial messages with role-based access, dashboards, and reporting.",
+      "Create, validate, convert, approve and analyze Swift MT and ISO 20022 MX messages, with role-based access, dashboards and PDF reporting.",
     tags: [
       "Angular",
       "Spring Boot",
@@ -187,67 +137,47 @@ export const projects: Project[] = [
       "PostgreSQL",
       "PDF Reporting",
     ],
-    icon: Network,
-    accent: "#3b82f6",
+    flow: ["Create", "Validate", "Convert", "Approve", "Analyze"],
   },
   {
-    index: 2,
     title: "Swift Traffic Analytics Dashboard",
     description:
-      "A professional dashboard for analyzing financial message traffic — input/output messages, financial categories, top clients and counterparties, currencies, FX volumes, correspondent balances, and growth indicators.",
+      "Traffic analytics for financial messages: inbound and outbound volumes, message categories, top clients and counterparties, currencies, FX volumes, correspondent balances and growth.",
     tags: ["Angular", "Highcharts", "Chart.js", "Java", "Financial KPIs"],
-    icon: BarChart3,
-    accent: "#22d3ee",
   },
   {
-    index: 3,
     title: "MT / MX Conversion Engine",
     description:
-      "A conversion and validation engine for transforming Swift MT messages into ISO 20022 MX format using structured parsing, business mapping rules, XML generation, and validation workflows.",
+      "Parses Swift MT messages, applies business mapping rules and generates validated ISO 20022 MX XML.",
     tags: ["Java", "XML", "XSD", "Swift", "ISO 20022", "Financial Messaging"],
-    icon: ArrowLeftRight,
-    accent: "#f3c45e",
   },
   {
-    index: 4,
     title: "Cybersecurity & SOC Intelligence Platform",
     description:
-      "An intelligent cybersecurity platform designed to normalize security events, analyze incidents, support decision-making, and provide audit-ready visibility for security operations.",
+      "Normalizes security events, analyzes incidents and keeps an audit-ready record for security operations teams.",
     tags: ["Spring Boot", "RabbitMQ", "AI", "SOC", "OCSF", "Security Automation"],
-    icon: Radar,
-    accent: "#3b82f6",
   },
 ];
 
-/* Other professional work — outside core banking, same engineering bar. */
 export const additionalProjects: Project[] = [
   {
-    index: 5,
     title: "Healverse — Healthcare SaaS",
     description:
-      "A SaaS platform that streamlines healthcare-provider operations — patient management, appointment scheduling and electronic health records in one secure workspace.",
+      "Patient management, appointment scheduling and electronic health records for healthcare providers, in one workspace.",
     tags: ["Vue.js", "PrimeVue", "NestJS", "Prisma", "MongoDB", "Stripe"],
-    icon: HeartPulse,
-    accent: "#22d3ee",
   },
   {
-    index: 6,
     title: "Swiftcure — Pharmacy SaaS",
     description:
-      "A SaaS platform for the pharmaceutical sector with a dashboard for managing inventory, sales and prescriptions across everyday pharmacy workflows.",
+      "Inventory, sales and prescriptions for pharmacies, managed from one dashboard.",
     tags: ["PHP", "MySQL", "Bootstrap", "Dashboard"],
-    icon: Pill,
-    accent: "#f3c45e",
     github: "https://github.com/ArfaouiBadi/Pharmacyverse-php",
   },
   {
-    index: 7,
     title: "Animeverse — E-commerce Platform",
     description:
-      "A full-featured e-commerce platform for anime merchandise with product browsing, cart, secure checkout and Stripe payments.",
+      "An anime merchandise store with product browsing, cart, checkout and Stripe payments.",
     tags: ["React", "TypeScript", "Node.js", "Express", "MongoDB", "Stripe"],
-    icon: ShoppingBag,
-    accent: "#3b82f6",
   },
 ];
 
@@ -290,7 +220,7 @@ export const academicProjects: ArchiveProject[] = [
 /*  Experience timeline                                                */
 /* ------------------------------------------------------------------ */
 
-export type ExperienceType = "Internship" | "Freelance" | "Program";
+export type ExperienceType = "Apprenticeship" | "Internship" | "Freelance" | "Program";
 
 export interface ExperienceEntry {
   role: string;
@@ -306,10 +236,24 @@ export interface ExperienceEntry {
 /* Reverse-chronological — most recent first. */
 export const experiences: ExperienceEntry[] = [
   {
+    role: "Software Developer",
+    company: "Banking Intelligence Consulting (BIC)",
+    location: "Tunis, Tunisia",
+    period: "Jul 2025 – Present",
+    type: "Apprenticeship",
+    domain: "Fintech",
+    highlights: [
+      "Design and deliver technology and digital transformation solutions for financial institutions, from consulting to implementation.",
+      "Develop SWIFT payments and messaging systems and AI-driven tools that streamline banking processes.",
+      "Work-study alongside an engineering degree in Software Engineering, AI & Data Science at Sesame University (2025 – 2029).",
+    ],
+    tech: ["SWIFT Payments", "SWIFT Messaging", "Core Banking", "AI automation"],
+  },
+  {
     role: "Graduation Project — SWIFT Messaging Platform",
     company: "Banking Intelligence Consulting (BIC)",
     location: "Tunis, Tunisia",
-    period: "Jan 2025 – Jun 2025",
+    period: "Feb 2025 – Jun 2025",
     type: "Internship",
     domain: "Fintech",
     highlights: [
@@ -395,85 +339,29 @@ export const architectureIntro =
 export interface ArchitecturePrinciple {
   title: string;
   description: string;
-  icon: LucideIcon;
 }
 
 export const architecturePrinciples: ArchitecturePrinciple[] = [
   {
     title: "Secure by design",
     description:
-      "Security as a design constraint — threat modeling, least privilege and validation at every layer.",
-    icon: ShieldCheck,
-  },
-  {
-    title: "Scalable backend architecture",
-    description:
-      "Clear service boundaries, async messaging and stateless components that scale horizontally.",
-    icon: Server,
-  },
-  {
-    title: "Clean frontend components",
-    description:
-      "Composable, typed UI components with predictable state and a consistent design language.",
-    icon: Blocks,
+      "Security is a design constraint: threat modeling, least privilege and validation at every layer.",
   },
   {
     title: "API-first development",
     description:
       "Well-defined, documented and versioned APIs as the contract between every part of the system.",
-    icon: Webhook,
   },
   {
     title: "Role-based access control",
     description:
-      "Granular permissions and role models so every action is authorized and accountable.",
-    icon: KeyRound,
+      "Granular permissions and role models, so every action is authorized and accountable.",
   },
   {
     title: "Auditability and traceability",
     description:
       "Every critical operation is logged, traceable and reconstructable for audits and investigations.",
-    icon: ScrollText,
   },
-  {
-    title: "Performance optimization",
-    description:
-      "Profiling, caching and query tuning to keep latency low where it matters most.",
-    icon: Gauge,
-  },
-  {
-    title: "Banking-grade reliability",
-    description:
-      "Resilient, fault-tolerant systems designed for the uptime financial operations demand.",
-    icon: Activity,
-  },
-];
-
-/* ------------------------------------------------------------------ */
-/*  Technologies                                                      */
-/* ------------------------------------------------------------------ */
-
-export const techStack = [
-  "Java",
-  "Spring Boot",
-  "Angular",
-  "TypeScript",
-  "PostgreSQL",
-  "MySQL",
-  "MongoDB",
-  "Docker",
-  "Nginx",
-  "Git",
-  "RabbitMQ",
-  "Linux",
-  "Tailwind CSS",
-  "Chart.js",
-  "Highcharts",
-  "XML",
-  "XSD",
-  "REST APIs",
-  "Swift MT",
-  "ISO 20022",
 ];
 
 /* ------------------------------------------------------------------ */
@@ -481,7 +369,7 @@ export const techStack = [
 /* ------------------------------------------------------------------ */
 
 export const contactIntro =
-  "I'm looking for banking and fintech engineering roles, and I'm open to freelance platform work. Email is the fastest way to reach me — I usually reply within a day.";
+  "I'm looking for banking and fintech engineering roles, and I'm open to freelance platform work. Email is the fastest way to reach me; I usually reply within a day.";
 
 export type ContactKind = "email" | "linkedin" | "github" | "resume";
 

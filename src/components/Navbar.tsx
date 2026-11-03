@@ -38,8 +38,11 @@ export default function Navbar() {
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
+    const onKey = (e: KeyboardEvent) => e.key === "Escape" && setOpen(false);
+    if (open) window.addEventListener("keydown", onKey);
     return () => {
       document.body.style.overflow = "";
+      window.removeEventListener("keydown", onKey);
     };
   }, [open]);
 
@@ -51,7 +54,7 @@ export default function Navbar() {
           scrolled ? "border-b border-line bg-ink-950" : "bg-transparent"
         )}
       >
-        <nav className="mx-auto flex h-16 max-w-5xl items-center justify-between gap-4 px-6">
+        <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-6">
           <a
             href="#home"
             className="font-display text-lg font-semibold text-zinc-100"
@@ -93,7 +96,7 @@ export default function Navbar() {
             <button
               type="button"
               onClick={() => setOpen(true)}
-              className="rounded-md border border-line p-2 text-zinc-200 md:hidden"
+              className="grid h-11 w-11 place-items-center rounded-md border border-line text-zinc-200 md:hidden"
               aria-label="Open navigation menu"
             >
               <Menu className="h-5 w-5" />
@@ -133,7 +136,7 @@ export default function Navbar() {
                 <button
                   type="button"
                   onClick={() => setOpen(false)}
-                  className="rounded-md border border-line p-2 text-zinc-200"
+                  className="grid h-11 w-11 place-items-center rounded-md border border-line text-zinc-200"
                   aria-label="Close navigation menu"
                 >
                   <X className="h-5 w-5" />

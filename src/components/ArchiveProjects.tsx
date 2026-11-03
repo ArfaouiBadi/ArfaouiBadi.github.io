@@ -16,10 +16,10 @@ export default function ArchiveProjects() {
         className="group flex w-full items-center justify-between gap-3 border-t border-line py-4 text-left"
       >
         <span className="label transition-colors group-hover:text-zinc-300">
-          Archive — academic &amp; early projects ({academicProjects.length})
+          Archive: academic &amp; early projects ({academicProjects.length})
         </span>
         <ChevronDown
-          className={`h-4 w-4 shrink-0 text-zinc-600 transition-transform duration-300 ${
+          className={`h-4 w-4 shrink-0 text-zinc-400 transition-transform duration-300 ${
             open ? "rotate-180" : ""
           }`}
         />
@@ -41,14 +41,14 @@ export default function ArchiveProjects() {
                     <h3 className="font-sans text-sm font-medium text-zinc-300">
                       {project.title}
                     </h3>
-                    <span className="font-mono text-[11px] text-zinc-600">
+                    <span className="font-mono text-[11px] text-zinc-400">
                       {project.period}
                     </span>
                   </div>
-                  <p className="mt-1 text-[13px] leading-relaxed text-zinc-500">
+                  <p className="mt-1 text-[13px] leading-relaxed text-zinc-400">
                     {project.summary}
                   </p>
-                  <p className="mt-1.5 font-mono text-[11px] text-zinc-600">
+                  <p className="mt-1.5 font-mono text-[11px] text-zinc-400">
                     {project.tech.join(" · ")}
                   </p>
                 </li>

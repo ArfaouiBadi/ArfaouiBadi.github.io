@@ -19,7 +19,7 @@ module.exports = {
       },
       fontFamily: {
         display: ['"Newsreader"', "Georgia", "serif"],
-        sans: ['"Inter"', "system-ui", "sans-serif"],
+        sans: ['"Geist"', "system-ui", "sans-serif"],
         mono: ['"JetBrains Mono"', "ui-monospace", "monospace"],
       },
     },
